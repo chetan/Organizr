@@ -1,0 +1,35 @@
+#!/usr/bin/with-contenv bash
+
+# Fetch site or update existing
+if [[ ! -d /config/www/Dashboard/.git ]]; then
+  echo '-----------------------'
+  echo '| Installing Organizr |'
+  echo '-----------------------'
+  git clone -b v2-master https://github.com/causefx/Organizr /config/www/Dashboard
+  git rev-parse HEAD > /config/www/Dashboard/Github.txt
+elif [[ -d /config/www/Dashboard/.git ]]; then
+  echo '-----------------------'
+  echo '|  Updating Organizr  |'
+  echo '-----------------------'
+  cd /config/www/Dashboard || (echo 'Failed to load Organizr repository folder'; exit)
+  git fetch
+  git reset --hard origin/v2-master
+  git checkout v2-master
+  git reset --hard origin/v2-master
+  git pull
+
+	# checkout the minified version
+	git branch -D minified || true
+	git checkout -b minified "$(cat /minified/git_hash)"
+
+  git rev-parse HEAD > /config/www/Dashboard/Github.txt
+fi
+
+# Make sure the config.php file is using the correct branch
+sed -i "s/'branch' => '[^']*',/'branch' =\> 'v2-master',/" /config/www/Dashboard/api/config/config.php
+
+cp -a /minified/index.php /minified/assets /config/www/Dashboard/
+
+# Set Permissions
+chown -R abc:abc \
+	/config

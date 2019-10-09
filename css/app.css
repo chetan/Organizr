@@ -1,0 +1,25 @@
+
+@import "../bootstrap/dist/css/bootstrap.min.css";
+@import "../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css";
+@import "../plugins/bower_components/jquery-wizard-master/css/wizard.css";
+@import "../plugins/bower_components/datatables/jquery.dataTables.min.css";
+@import "../plugins/bower_components/jquery-wizard-master/libs/formvalidation/formValidation.min.css";
+@import "../plugins/bower_components/Magnific-Popup-master/dist/magnific-popup.css";
+/* @import "../plugins/bower_components/sweetalert/sweetalert.css"; */
+@import "../plugins/bower_components/switchery/dist/switchery.min.css";
+@import "../plugins/bower_components/dropzone-master/dist/dropzone.css";
+@import "../plugins/bower_components/css-chart/css-chart.css";
+@import "../plugins/bower_components/calendar/dist/fullcalendar.css";
+@import "../plugins/bower_components/custom-select/custom-select.css";
+@import "../plugins/bower_components/bootstrap-colorpicker-sliders/bootstrap.colorpickersliders.min.css";
+@import "../plugins/bower_components/bootstrap-select/bootstrap-select.min.css";
+@import "../plugins/bower_components/multiselect/css/multi-select.css";
+@import "../plugins/bower_components/owl.carousel/owl.carousel.min.css";
+@import "../plugins/bower_components/owl.carousel/owl.theme.default.css";
+@import "../plugins/bower_components/hover/hover-min.css";
+@import "./animate.css";
+@import "./simplebar.css";
+@import "./plyr.css";
+@import "./dark.css";
+@import "./organizr.min.css";
+@import "./themes/Organizr.css";

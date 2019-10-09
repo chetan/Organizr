@@ -1,0 +1,63 @@
+var gulp = require('gulp'),
+    gp_concat = require('gulp-concat'),
+    gp_rename = require('gulp-rename'),
+    terser = require('gulp-terser');
+
+exports.default = function(){
+    return gulp.src([
+      'js/jquery-2.2.4.min.js',
+      'bootstrap/dist/js/bootstrap.min.js',
+      'plugins/bower_components/sidebar-nav/dist/sidebar-nav.js',
+      'js/jquery.slimscroll.js',
+      'js/waves.js',
+      'plugins/bower_components/styleswitcher/jQuery.style.switcher.js',
+      'plugins/bower_components/moment/moment.js',
+      'plugins/bower_components/moment/moment-timezone.js',
+      'plugins/bower_components/jquery-wizard-master/dist/jquery-wizard.min.js',
+      'plugins/bower_components/jquery-wizard-master/libs/formvalidation/formValidation.min.js',
+      'plugins/bower_components/jquery-wizard-master/libs/formvalidation/bootstrap.min.js',
+      "js/bowser.min.js",
+      "js/jasny-bootstrap.js",
+      "js/cbpFWTabs.js",
+      "js/js.cookie.js",
+      "js/jquery-lang.js",
+      "js/jquery-ui.min.js",
+      "js/jquery.serializeToJSON.js",
+      "js/lazyload.min2.js",
+      "js/clipboard.js",
+      "js/emulatetab.joelpurra.js",
+      "plugins/bower_components/ace/ace.js",
+      "plugins/bower_components/ace/mode-css.js",
+      "plugins/bower_components/ace/mode-html.js",
+      "plugins/bower_components/ace/mode-javascript.js",
+      "plugins/bower_components/ace/theme-idle_fingers.js",
+      "plugins/bower_components/blockUI/jquery.blockUI.js",
+      "plugins/bower_components/datatables/jquery.dataTables.min.js",
+      "plugins/bower_components/datatables-plugins/sorting/datetime-moment.js",
+      "plugins/bower_components/Magnific-Popup-master/dist/jquery.magnific-popup.min.js",
+      "plugins/bower_components/sweetalert/sweetalert.min.js",
+      "plugins/bower_components/switchery/dist/switchery.min.js",
+      "js/tinycolor.min.js",
+      "plugins/bower_components/bootstrap-colorpicker-sliders/bootstrap.colorpickersliders.min.js",
+      "plugins/bower_components/dropzone-master/dist/dropzone.js",
+      "plugins/bower_components/owl.carousel/owl.carousel.min.js",
+      "plugins/bower_components/calendar/dist/fullcalendar.js",
+      "plugins/bower_components/custom-select/custom-select.min.js",
+      "plugins/bower_components/bootstrap-select/bootstrap-select.min.js",
+      "plugins/bower_components/tinymce/tinymce.min.js",
+      "plugins/bower_components/multiselect/js/jquery.multi-select.js",
+      "plugins/bower_components/mousetrap/mousetrap.min.js",
+      "plugins/bower_components/bootstrap-treeview-master/dist/bootstrap-treeview.min.js",
+      "js/jquery.mousewheel.min.js",
+      "js/ua-parser.min.js",
+      "js/plyr.js",
+      "js/simplebar.js",
+      'js/functions.js',
+      'js/custom.min.js',
+    ])
+      .pipe(gp_concat('concat.js'))
+      .pipe(gulp.dest('dist'))
+      .pipe(gp_rename('app.js'))
+      .pipe(terser())
+      .pipe(gulp.dest('assets'));
+}
