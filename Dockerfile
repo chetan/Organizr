@@ -17,6 +17,9 @@ RUN cd /config/www \
 
 FROM organizrtools/organizr-v2:latest
 
+ARG GIT_HASH
+
 COPY docker/30-install /etc/cont-init.d/
 COPY --from=build /config/www/Dashboard/assets /minified/assets
 COPY --from=build /config/www/Dashboard/index.php /minified/
+RUN echo "$GIT_HASH" > /minified/git_hash
