@@ -2,12 +2,12 @@ FROM organizrtools/organizr-v2:latest AS build
 
 RUN apk add --quiet nodejs yarn util-linux
 
-COPY package.json yarn.lock /config/www/Dashboard/
-RUN cd /config/www/Dashboard \
+COPY package.json yarn.lock /build/www/Dashboard/
+RUN cd /build/www/Dashboard \
   && yarn --no-progress
 
-COPY . /config/www/Dashboard
-RUN cd /config/www \
+COPY . /build/www/Dashboard
+RUN cd /build/www \
   && ln -s Dashboard/plugins . \
   && cd Dashboard \
 # not entirely sure why i have to run yarn again here
@@ -17,9 +17,8 @@ RUN cd /config/www \
 
 FROM organizrtools/organizr-v2:latest
 
-ARG GIT_HASH
-
 COPY docker/30-install /etc/cont-init.d/
-COPY --from=build /config/www/Dashboard/assets /minified/assets
-COPY --from=build /config/www/Dashboard/index.php /minified/
-RUN echo "$GIT_HASH" > /minified/git_hash
+COPY docker/v2-master-hash.txt /minified/git_hash
+COPY --from=build /build/www/Dashboard/assets /minified/assets
+COPY --from=build /build/www/Dashboard/index.php /minified/
+
