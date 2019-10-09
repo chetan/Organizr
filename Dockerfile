@@ -10,8 +10,6 @@ COPY . /build/www/Dashboard
 RUN cd /build/www \
   && ln -s Dashboard/plugins . \
   && cd Dashboard \
-# not entirely sure why i have to run yarn again here
-  && yarn --no-progress \
   && yarn run gulp \
   && yarn run build
 
