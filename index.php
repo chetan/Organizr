@@ -11,33 +11,13 @@
     <meta content="CauseFX" name="author">
 	<?php echo favIcons(); ?>
     <title><?php echo $GLOBALS['organizrIndexTitle']; ?></title>
-    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
-    <link href="plugins/bower_components/jquery-wizard-master/css/wizard.css" rel="stylesheet">
-    <link href="plugins/bower_components/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
-    <link href="plugins/bower_components/jquery-wizard-master/libs/formvalidation/formValidation.min.css"
-          rel="stylesheet">
-    <link href="plugins/bower_components/Magnific-Popup-master/dist/magnific-popup.css" rel="stylesheet">
-    <!--<link href="plugins/bower_components/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">-->
-    <link href="plugins/bower_components/switchery/dist/switchery.min.css" rel="stylesheet"/>
-    <link href="plugins/bower_components/dropzone-master/dist/dropzone.css" rel="stylesheet" type="text/css"/>
-    <link href="plugins/bower_components/css-chart/css-chart.css" rel="stylesheet">
-    <link href="plugins/bower_components/calendar/dist/fullcalendar.css" rel="stylesheet"/>
-    <link href="plugins/bower_components/custom-select/custom-select.css" rel="stylesheet" type="text/css"/>
-    <link href="plugins/bower_components/bootstrap-colorpicker-sliders/bootstrap.colorpickersliders.min.css"
-          rel="stylesheet" type="text/css"/>
-    <link href="plugins/bower_components/bootstrap-select/bootstrap-select.min.css" rel="stylesheet"/>
-    <link href="plugins/bower_components/multiselect/css/multi-select.css" rel="stylesheet" type="text/css"/>
-    <link href="plugins/bower_components/owl.carousel/owl.carousel.min.css" rel="stylesheet" type="text/css"/>
-    <link href="plugins/bower_components/owl.carousel/owl.theme.default.css" rel="stylesheet" type="text/css"/>
-    <link href="plugins/bower_components/hover/hover-min.css" rel="stylesheet" type="text/css"/>
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/simplebar.css" rel="stylesheet">
-    <link href="css/plyr.css" rel="stylesheet">
-    <link id="style" href="css/dark.css?v=<?php echo $GLOBALS['fileHash']; ?>" rel="stylesheet">
-    <link href="css/organizr.min.css?v=<?php echo $GLOBALS['fileHash']; ?>" rel="stylesheet">
-	<?php echo pluginFiles('css'); ?>
-    <link id="theme" href="css/themes/Organizr.css?v=<?php echo $GLOBALS['fileHash']; ?>" rel="stylesheet">
+
+    <link href="/assets/app.css" rel="stylesheet">
+    <link id="style">
+    <link id="theme">
+
+    <?php echo pluginFiles('css'); ?>
+
     <style id="user-appearance"></style>
     <style id="custom-theme-css"></style>
     <style id="custom-css"></style>
@@ -243,61 +223,14 @@
 <!-- jQuery -->
 <!--<script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>-->
 <?php echo "<script>languageList = " . languagePacks(true) . ";\n</script>"; ?>
-<script src="js/jquery-2.2.4.min.js"></script>
-<script src="bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="plugins/bower_components/sidebar-nav/dist/sidebar-nav.js"></script>
-<script src="js/jquery.slimscroll.js"></script>
-<script src="js/waves.js"></script>
-<script src="plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
-<script src="plugins/bower_components/moment/moment.js"></script>
-<script src="plugins/bower_components/moment/moment-timezone.js"></script>
-<script src="plugins/bower_components/jquery-wizard-master/dist/jquery-wizard.min.js"></script>
-<script src="plugins/bower_components/jquery-wizard-master/libs/formvalidation/formValidation.min.js"></script>
-<script src="plugins/bower_components/jquery-wizard-master/libs/formvalidation/bootstrap.min.js"></script>
-<script src="js/bowser.min.js"></script>
-<script src="js/jasny-bootstrap.js"></script>
-<script src="js/cbpFWTabs.js"></script>
-<script src="js/js.cookie.js"></script>
-<script src="js/jquery-lang.js"></script>
-<script src="js/jquery-ui.min.js"></script>
-<script src="js/jquery.serializeToJSON.js"></script>
-<script src="js/lazyload.min2.js"></script>
-<script src="js/clipboard.js"></script>
-<script src="js/emulatetab.joelpurra.js"></script>
-<script src="plugins/bower_components/ace/ace.js"></script>
-<script src="plugins/bower_components/ace/mode-css.js"></script>
-<script src="plugins/bower_components/ace/mode-html.js"></script>
-<script src="plugins/bower_components/ace/mode-javascript.js"></script>
-<script src="plugins/bower_components/ace/theme-idle_fingers.js"></script>
-<script src="plugins/bower_components/blockUI/jquery.blockUI.js"></script>
-<script src="plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
-<script src="plugins/bower_components/datatables-plugins/sorting/datetime-moment.js"></script>
-<script src="plugins/bower_components/Magnific-Popup-master/dist/jquery.magnific-popup.min.js"></script>
-<script src="plugins/bower_components/sweetalert/sweetalert.min.js?v=<?php echo $GLOBALS['fileHash']; ?>"></script>
-<script src="plugins/bower_components/switchery/dist/switchery.min.js"></script>
-<script src="js/tinycolor.min.js"></script>
-<script src="plugins/bower_components/bootstrap-colorpicker-sliders/bootstrap.colorpickersliders.min.js"></script>
-<script src="plugins/bower_components/dropzone-master/dist/dropzone.js"></script>
-<script src="plugins/bower_components/owl.carousel/owl.carousel.min.js"></script>
-<script src="plugins/bower_components/calendar/dist/fullcalendar.js"></script>
-<script src="plugins/bower_components/custom-select/custom-select.min.js"></script>
-<script src="plugins/bower_components/bootstrap-select/bootstrap-select.min.js"></script>
-<script src="plugins/bower_components/tinymce/tinymce.min.js"></script>
-<script src="plugins/bower_components/multiselect/js/jquery.multi-select.js"></script>
-<script src="plugins/bower_components/mousetrap/mousetrap.min.js"></script>
-<script src="plugins/bower_components/bootstrap-treeview-master/dist/bootstrap-treeview.min.js"></script>
-<script src="js/jquery.mousewheel.min.js"></script>
-<script src="js/ua-parser.min.js"></script>
-<script src="js/plyr.js"></script>
-<script src="js/simplebar.js"></script>
-<script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
-<script src="js/functions.js?v=<?php echo $GLOBALS['fileHash']; ?>"></script>
-<script src="js/custom.min.js?v=<?php echo $GLOBALS['fileHash']; ?>"></script>
+<script src="/assets/app.js"></script>
+
 <script id="custom-theme-javascript"></script>
 <script id="custom-javascript"></script>
 <script src="https://js.pusher.com/4.1/pusher.min.js"
         integrity="sha384-e9MoFh6Cw/uluf+NZ6MJwfJ1Dm7UOvJf9oTBxxCYDyStJeeAF0q53ztnEbLLDSQP"
         crossorigin="anonymous"></script>
+
 <?php echo googleTracking(); ?>
 <?php echo pluginFiles('js');
 echo formKey(); ?>

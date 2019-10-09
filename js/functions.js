@@ -996,7 +996,7 @@ function buildPluginsItem(array){
 	$.each(array, function(i,v) {
 		var settingsPage = (v.settings == true) ? `
 		<!-- Plugin Settings Page -->
-		<form id="`+v.idPrefix+`-settings-page" class="mfp-hide white-popup mfp-with-anim addFormTick col-md-10 col-md-offset-1" autocomplete="off">                			
+		<form id="`+v.idPrefix+`-settings-page" class="mfp-hide white-popup mfp-with-anim addFormTick col-md-10 col-md-offset-1" autocomplete="off">
             <div class="panel bg-org panel-info">
                 <div class="panel-heading">
                     <span lang="en">`+v.name+` Settings</span>
@@ -2101,7 +2101,7 @@ function twoFA(action, type, secret = null){
             });
             break;
         case 'verify':
-            var secret = $('.twofa-modal-secret').text();
+            secret = $('.twofa-modal-secret').text();
             var code = $('#twofa-verify').val();
             if(type !== '' && secret !== '' && code !== ''){
                 organizrAPI('POST','api/?v1/2fa/verify',{type:type, secret:secret, code:code}).success(function(data) {
@@ -2548,7 +2548,7 @@ function buildInternalContainer(name,url,type){
 	return `<div id="internal-`+cleanClass(name)+`" data-type="`+type+`" class="internal-container frame-`+cleanClass(name)+` hidden" data-url="`+url+`" data-name="`+cleanClass(name)+`"></div>`;
 }
 function buildMenuList(name,url,type,icon,ping=null){
-    var ping = (ping !== null) ? `<small class="menu-`+cleanClass(ping)+`-ping-ms hidden-xs label label-rouded label-inverse pull-right pingTime hidden">
+    ping = (ping !== null) ? `<small class="menu-`+cleanClass(ping)+`-ping-ms hidden-xs label label-rouded label-inverse pull-right pingTime hidden">
 </small><div class="menu-`+cleanClass(ping)+`-ping" data-tab-name="`+name+`" data-previous-state=""></div>` : '';
 	return `<li class="allTabsList" id="menu-`+cleanClass(name)+`" data-tab-name="`+cleanClass(name)+`" type="`+type+`" data-url="`+url+`"><a class="waves-effect"  onclick="tabActions(event,'`+cleanClass(name)+`',`+type+`);">`+iconPrefix(icon)+`<span class="hide-menu elip sidebar-tabName">`+name+`</span>`+ping+`</a></li>`;
 }
@@ -3278,7 +3278,7 @@ function sponsorAbout(id,array){
                                     <div class="comment-body b-none">
                                         <div class="user-img"> <img src="`+array.logo+`" alt="user" class="img-circle"> </div>
                                         <div class="mail-contnet">
-                                            <h5><a href="`+array.website+`" target="_blank">`+array.company_name+`</a></h5> 
+                                            <h5><a href="`+array.website+`" target="_blank">`+array.company_name+`</a></h5>
                                             `+array.about+extraInfo+`
                                          </div>
                                     </div>
@@ -4770,7 +4770,7 @@ function buildRequestResult(array,media_type=null,list=null,page=null,search=fal
 		<div class="button-box text-center p-b-0">
             <ul class="pagination m-b-0">
                 <li class="`+previousHidden+`"> <a href="javascript:void(0)" onclick="requestList('`+list+`', '`+media_type+`', '`+pagePrevious+`');"><i class="fa fa-angle-left"></i></a> </li>
- 
+
                 `+pageList+`
                 <li class="`+nextHidden+`"> <a href="javascript:void(0)" onclick="requestList('`+list+`', '`+media_type+`', '`+pageNext+`');"><i class="fa fa-angle-right"></i></a> </li>
             </ul>
@@ -7104,7 +7104,7 @@ function showLDAPLoginTest(){
                             <div class="form-group mb-0 p-r-10 text-right">
                                 <button type="submit" onclick="testAPIConnection('ldap_login', {'username':$('#ldapUsernameTest').val(),'password':$('#ldapPasswordTest').val()})" class="btn btn-info waves-effect waves-light">Test Login</button>
                             </div>
-                        </div>				
+                        </div>
                     </div>
                 </div>
             </div>

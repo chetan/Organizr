@@ -150,3 +150,10 @@ api/plugins/*
 # Custom files
 # =========================
 api/pages/custom/*.php
+
+# Minified files
+/assets
+/dist
+/.cache
+/.flowconfig
+
