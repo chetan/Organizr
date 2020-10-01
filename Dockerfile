@@ -1,4 +1,4 @@
-FROM organizrtools/organizr-v2:latest AS build
+FROM organizr/organizr:latest AS build
 
 RUN apk add --quiet nodejs yarn util-linux
 
@@ -13,7 +13,7 @@ RUN cd /build/www \
   && yarn run gulp \
   && yarn run build
 
-FROM organizrtools/organizr-v2:latest
+FROM organizr/organizr:latest
 
 COPY docker/30-install /etc/cont-init.d/
 COPY docker/v2-master-hash.txt /minified/git_hash
